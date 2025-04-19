@@ -1,58 +1,67 @@
-# hotel-operations-analysis
-Data analysis project investigating service delays and customer satisfaction in LuxurStay Hotels.
+# Hotel Operations Data Analysis 🏨📊
 
-📁 Hotel Operations Analysis – Portfolio Project
-Project Name: Optimizing Hotel Service Delivery and Satisfaction using Data Analysis
+This project investigates customer satisfaction and service response times across branches of **LuxurStay Hotels**, a global hotel chain. The analysis helps identify issues in service delivery and target areas for operational improvements.
 
-Platform: [DataCamp Project – Practical Exam: Hotel Operations]
+---
 
-Problem Statement:
-LuxurStay Hotels, a global hotel chain, has observed a drop in customer satisfaction due to slow room services. As a data analyst, I was tasked with analyzing operational data to identify the root causes and recommend improvements in service efficiency and satisfaction levels.
+## 🧩 Problem Statement
 
-📌 Project Tasks & Insights
-Task 1: Data Cleaning and Validation
-Cleaned the branch table by validating data consistency based on schema descriptions.
+LuxurStay Hotels received multiple complaints about **slow room services** in certain branches. Customer satisfaction has dropped below their desired threshold of **4.5 out of 5**.  
+The goal of this analysis is to uncover root causes and help the Head of Operations address these issues.
 
-Removed invalid or null values and ensured accurate data types.
+---
 
-Created a cleaned DataFrame clean_branch_data for further analysis.
+## 📁 Dataset Description
 
-Task 2: Service Time Analysis
-Aggregated service request data to compute average and maximum time taken for each service per branch.
+The project uses 3 tables:
 
-Created a summary table average_time_service with avg_time_taken and max_time_taken rounded to two decimal places.
+- **Branch**: Metadata about each hotel branch
+- **Service**: Types of services offered (e.g., Meal, Laundry)
+- **Request**: Customer service requests, ratings, and response times
 
-Identified which services were most time-consuming in each hotel.
+Relational Schema:
+- `Request` links to `Branch` and `Service` via foreign keys
 
-Task 3: Focused Region and Service Analysis
-Filtered data to focus on Meal and Laundry services in Europe (EMEA) and Latin America (LATAM) regions.
+---
 
-Created a detailed DataFrame target_hotels showing service descriptions, branch locations, request IDs, and customer ratings.
+## 🎯 Tasks Overview
 
-This helped identify which services and locations needed targeted operational improvements.
+### 🧼 Task 1: Clean `branch` Table
+- Identify and remove invalid values (e.g., missing data, outliers)
+- Output: `clean_branch_data`
 
-Task 4: Low-Performing Service Combinations
-Calculated average customer satisfaction ratings by service_id and branch_id.
+### ⏱️ Task 2: Analyze Service Time
+- Calculate **average** and **maximum** time taken for each service at each branch
+- Output: `average_time_service`
 
-Filtered for combinations with average rating below 4.5 (management’s target threshold).
+### 🌍 Task 3: Target Regions for Improvement
+- Focus on **Laundry** and **Meal** services in **Europe (EMEA)** and **Latin America (LATAM)**
+- Return service description, branch location, request ID, and rating
+- Output: `target_hotels`
 
-Created average_rating DataFrame to spotlight poorly rated services and locations.
+### 📉 Task 4: Identify Underperforming Services
+- Report service-branch pairs where **average rating < 4.5**
+- Output: `average_rating`
 
-🛠️ Tools & Skills Applied
+---
 
-Data cleaning & wrangling
+## 🛠️ Skills & Tools Used
 
-GroupBy, aggregation, filtering
+- **SQL-style querying**
+- **Data cleaning**
+- **Group-by aggregations**
+- **Analytical storytelling**
 
-Insight generation
+---
 
-Data storytelling and stakeholder-focused analysis
+## 📌 Key Insights
 
-📈 Key Takeaways
-Services with high avg_time_taken often correlated with low satisfaction ratings.
+- Certain branches consistently have longer response times.
+- Meal and Laundry services in EMEA and LATAM are lower-rated.
+- Some branches fall below the 4.5 satisfaction threshold set by management.
 
-Specific branches (especially in EMEA & LATAM) had operational bottlenecks in delivering Laundry and Meal services.
+---
 
-Strategic interventions in these branches can improve overall customer experience.
+## 🔗 Credits
 
-
+Data and problem provided by [DataCamp](https://www.datacamp.com/), adapted for portfolio purposes.
